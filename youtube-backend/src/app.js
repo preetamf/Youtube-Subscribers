@@ -15,6 +15,10 @@ app.get("/subscribers", async (req, res) => {
   res.send(data);
 });
 
+app.get("/", async (req, res) => {
+  res.send("Home Page");
+});
+
 // Creating GET API response with an array of subscribers with name and subscribed channel only. (an Object)
 app.get("/subscribers/names", async (req, res) => {
   let data = await subscriberSchema.find();
