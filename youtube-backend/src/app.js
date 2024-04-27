@@ -8,15 +8,14 @@ app.use(cors());
 //  Importing Mongoose Schema from subscribers.js
 const subscriberSchema = require("./models/subscribers");
 
+app.get("/", async (req, res) => {
+  res.send("Home Page");
+});
 
 // Creating GET API which response with an array of subscribers. (an Object)
 app.get("/subscribers", async (req, res) => {
   let data = await subscriberSchema.find();
   res.send(data);
-});
-
-app.get("/", async (req, res) => {
-  res.send("Home Page");
 });
 
 // Creating GET API response with an array of subscribers with name and subscribed channel only. (an Object)
